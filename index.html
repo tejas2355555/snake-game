@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+
+<title>Snake Classic Ultimate</title>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="app">
+<div class="game">
+
+<header class="header">
+
+    <div class="logo">
+        Sna<span>k</span>e
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <small>SCORE</small>
+            <strong id="score">0</strong>
+        </div>
+
+        <div class="stat">
+            <small>BEST</small>
+            <strong id="best">0</strong>
+        </div>
+
+    </div>
+
+</header>
+
+<div class="board">
+
+    <button class="boardBtn fullscreen"
+            id="fullscreenBtn">⛶</button>
+
+    <button class="boardBtn pause"
+            id="pauseBtn">❚❚</button>
+
+    <canvas id="canvas"></canvas>
+
+    <div class="combo" id="combo"></div>
+
+    <div class="overlay" id="overlay">
+
+        <div class="panel">
+
+            <h1 id="title">🐍 Snake</h1>
+
+            <p id="message">
+                Swipe anywhere on the board to control the snake.
+            </p>
+
+            <div class="options">
+
+                <div class="option">
+                    <label>Snake Skin</label>
+
+                    <select id="snakeColor">
+
+                        <option value="green">
+                            🟢 Toxic Green
+                        </option>
+
+                        <option value="blue">
+                            🔵 Ocean Blue
+                        </option>
+
+                        <option value="red">
+                            🔴 Fire Red
+                        </option>
+
+                        <option value="purple">
+                            🟣 Plasma Purple
+                        </option>
+
+                        <option value="gold">
+                            🟡 Golden
+                        </option>
+
+                        <option value="rainbow">
+                            🌈 Rainbow
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="option">
+
+                    <label>Eyes</label>
+
+                    <select id="eyes">
+
+                        <option value="normal">
+                            👀 Normal
+                        </option>
+
+                        <option value="big">
+                            👁️ Big
+                        </option>
+
+                        <option value="neon">
+                            ✨ Neon
+                        </option>
+
+                        <option value="sleepy">
+                            😴 Sleepy
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="option">
+
+                    <label>Food</label>
+
+                    <select id="food">
+
+                        <option value="apple">
+                            🍎 Apple
+                        </option>
+
+                        <option value="rabbit">
+                            🐇 Rabbit
+                        </option>
+
+                        <option value="insect">
+                            🪲 Insect
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="option">
+
+                    <label>Background</label>
+
+                    <select id="background">
+
+                        <option value="dark">
+                            🌑 Dark
+                        </option>
+
+                        <option value="blue">
+                            🌌 Blue
+                        </option>
+
+                        <option value="forest">
+                            🌲 Forest
+                        </option>
+
+                        <option value="purple">
+                            🔮 Purple
+                        </option>
+
+                        <option value="space">
+                            🌠 Space
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- SURVIVAL REMOVED -->
+
+                <div class="option">
+
+                    <label>Mode</label>
+
+                    <select id="mode">
+
+                        <option value="classic">
+                            Classic
+                        </option>
+
+                        <option value="speed">
+                            ⚡ Speed
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="option">
+
+                    <label>Power Ups</label>
+
+                    <select id="power">
+
+                        <option value="on">
+                            ⚡ ON
+                        </option>
+
+                        <option value="off">
+                            OFF
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="volumeBox">
+
+                <div class="volume">
+
+                    <span>
+                        <b>🔊 SFX</b>
+                        <b id="sfxValue">100%</b>
+                    </span>
+
+                    <input id="sfxVolume"
+                           type="range"
+                           min="0"
+                           max="100"
+                           value="100">
+
+                </div>
+
+                <div class="volume">
+
+                    <span>
+                        <b>🎵 MUSIC</b>
+                        <b id="musicValue">35%</b>
+                    </span>
+
+                    <input id="musicVolume"
+                           type="range"
+                           min="0"
+                           max="100"
+                           value="35">
+
+                </div>
+
+            </div>
+
+            <div id="finalScore"
+                 class="final"
+                 style="display:none">
+                0
+            </div>
+
+            <button class="start"
+                    id="startBtn">
+                START GAME
+            </button>
+
+            <button class="sound"
+                    id="soundBtn">
+                🔊 Sound On
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="help">
+    Swipe to move • Arrow Keys/WASD • Space = Pause
+</div>
+
+</div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
